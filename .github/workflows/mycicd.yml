@@ -45,14 +45,9 @@ jobs:
     needs: build
 
     steps:
-#
-#       - name: git ping
-#        run: git --version
 
       - name: Deploy
         run: |
-          git --version
-          git init
           git config --global user.name IvanRavinskiy
           git config --global user.email ivan.ravinskiy@gmail.com
           git remote set-url origin https://${github_token}@github.com/${repository}
