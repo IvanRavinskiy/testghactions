@@ -46,6 +46,9 @@ jobs:
 
     steps:
 
+       - name: git ping
+        run: git --version
+
       - name: Deploy
         run: |
           git config --global user.name IvanRavinskiy
