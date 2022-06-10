@@ -48,11 +48,10 @@ jobs:
 
       - name: Deploy
         run: |
-          ls -al
-#          git init
+          git init
           git config --global user.name IvanRavinskiy
           git config --global user.email ivan.ravinskiy@gmail.com
-          git remote set-url origin https://${github_token}@github.com/${repository}
+#          git remote set-url origin https://${github_token}@github.com/${repository}
           yarn deploy
         env:
           user_name: 'github-actions[bot]'
