@@ -40,10 +40,15 @@ jobs:
       - name: Deploy
         run: |
           pwd
+          echo "pwd end"
           git config --global user.name IvanRavinskiy
+          echo "IvanRavinskiy end"
           git config --global user.email ivan.ravinskiy@gmail.com
+          echo "ivan.ravinskiy@gmail.com end"
           git remote set-url origin https://${github_token}@github.com/${repository}
+          echo "git remote set-url origin end"
           yarn deploy
+          echo "deploy end"
         env:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
