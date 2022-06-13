@@ -47,6 +47,7 @@ jobs:
           echo "ivan.ravinskiy@gmail.com end"
           git remote set-url origin https://${github_token}@github.com/${repository}
           echo "git remote set-url origin end"
+          echo package.json
           yarn deploy
           echo "deploy end"
         env:
