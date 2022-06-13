@@ -18,13 +18,13 @@ jobs:
           node-version: latest
 
       - name: Install dependencies
-        run: yarn
+        run: npm install
 
       - name: Run the tests
-        run: yarn test
+        run: npm run test
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
   deploy:
 
@@ -41,8 +41,8 @@ jobs:
           git config --global user.name IvanRavinskiy
           git config --global user.email ivan.ravinskiy@gmail.com
           git remote set-url origin https://${github_token}@github.com/${repository}
-          yarn
-          yarn deploy
+          npm install
+          npm run deploy
         env:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
