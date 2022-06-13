@@ -26,6 +26,8 @@ jobs:
       - name: Build
         run: yarn build
 
+      - run: echo $PATH
+      - run: echo package.json
   deploy:
 
     runs-on: ubuntu-latest
