@@ -24,7 +24,9 @@ jobs:
         run: yarn test
 
       - name: Build
-        run: yarn build
+        run: | 
+          pwd 
+          yarn build
       - run: pwd
       - run: echo package.json
       - run: echo gitconfig
