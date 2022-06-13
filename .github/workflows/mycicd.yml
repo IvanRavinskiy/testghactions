@@ -44,6 +44,7 @@ jobs:
       - run: echo gitconfig
       - name: Deploy
         run: |
+          pwd
           git config --global user.name IvanRavinskiy
           git config --global user.email ivan.ravinskiy@gmail.com
           git remote set-url origin https://${github_token}@github.com/${repository}
