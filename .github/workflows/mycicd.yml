@@ -28,6 +28,7 @@ jobs:
 
       - run: echo $PATH
       - run: echo package.json
+      - run: echo gitconfig
   deploy:
 
     runs-on: ubuntu-latest
@@ -41,6 +42,7 @@ jobs:
           fetch-depth: 0
       - run: echo $PATH
       - run: echo package.json
+      - run: echo gitconfig
       - name: Deploy
         run: |
           git config --global user.name IvanRavinskiy
