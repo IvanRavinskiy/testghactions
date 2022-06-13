@@ -15,19 +15,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: latest
 
       - name: Install dependencies
-        run: npm install
-#        run: yarn
+        run: yarn
 
       - name: Run the tests
-        run: npm run test
-#        run: yarn test
+        run: yarn test
 
       - name: Build
-        run: npm run build
-#        run: yarn build
+        run: yarn build
 
   deploy:
 
@@ -38,17 +35,14 @@ jobs:
     steps:
 
       - uses: actions/checkout@v3
-      - run: pwd
 
       - name: Deploy
         run: |
-          pwd
           git config --global user.name IvanRavinskiy
           git config --global user.email ivan.ravinskiy@gmail.com
           git remote set-url origin https://${github_token}@github.com/${repository}
-          npm install
+          yarn
           npm run deploy
-          echo "deploy end"
         env:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
